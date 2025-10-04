@@ -18,25 +18,33 @@ class CategoryResource extends Resource
     protected static ?string $navigationGroup = 'Shop Management';
 
     public static function form(Form $form): Form
-    {
-        return $form->schema([
-            Forms\Components\TextInput::make('name')
-                ->required()
-                ->maxLength(255),
+{
+    return $form->schema([
+        Forms\Components\TextInput::make('name')
+            ->required()
+            ->maxLength(255),
 
-            Forms\Components\TextInput::make('slug')
-                ->required()
-                ->maxLength(255),
+        Forms\Components\TextInput::make('slug')
+            ->required()
+            ->maxLength(255),
 
-            Forms\Components\Textarea::make('description')
-                ->rows(3),
+        Forms\Components\Textarea::make('description')
+            ->rows(3),
 
-            Forms\Components\FileUpload::make('image')
-                ->image()
-                ->directory('categories')
-                ->nullable(),
-        ]);
-    }
+        Forms\Components\FileUpload::make('image')
+            ->image()
+            ->directory('categories')
+            ->nullable(),
+
+        Forms\Components\Select::make('parent_id')
+            ->label('Parent Category')
+            ->relationship('parent', 'name') // <-- Model relation use karega
+            ->searchable()
+            ->nullable()
+            ->preload(),
+    ]);
+}
+
 
     public static function table(Table $table): Table
     {
