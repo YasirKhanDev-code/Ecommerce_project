@@ -23,4 +23,22 @@ class Product extends Model
 {
     return $query->where('is_featured', true);
 }
+
+public function attributeValues()
+{
+    return $this->belongsToMany(
+        \Modules\Product\App\Models\AttributeValue::class,
+        'product_attribute_values', // pivot table
+        'product_id',
+        'attribute_value_id'
+    )->with('attribute'); // important!
+}
+
+
+public function inventories()
+{
+    return $this->hasMany(Inventory::class);
+}
+
+
 }

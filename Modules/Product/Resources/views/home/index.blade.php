@@ -44,7 +44,7 @@
             <div class="col-lg-4 col-md-6 pb-1">
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                    <a href="{{route('shop.category','men dresses')}}" class="cat-img position-relative overflow-hidden mb-3">
                         <img class="img-fluid" src="{{ asset('modules/product/img/cat-1.jpg') }}" alt="Category 1">
 
                     </a>
@@ -54,7 +54,7 @@
             <div class="col-lg-4 col-md-6 pb-1">
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                    <a href="{{route('shop.category','women dresses')}}" class="cat-img position-relative overflow-hidden mb-3">
                         <img class="img-fluid" src="{{asset('modules/product/img/cat-2.jpg')}}" alt="">
                     </a>
                     <h5 class="font-weight-semi-bold m-0">Women's dresses</h5>
@@ -63,7 +63,7 @@
             <div class="col-lg-4 col-md-6 pb-1">
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                    <a href="{{route('shop.category','baby dresses')}}" class="cat-img position-relative overflow-hidden mb-3">
                         <img class="img-fluid" src="{{asset('modules/product/img/cat-3.jpg')}}" alt="">
                     </a>
                     <h5 class="font-weight-semi-bold m-0">Baby's dresses</h5>
@@ -72,7 +72,7 @@
             <div class="col-lg-4 col-md-6 pb-1">
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                    <a href="{{route('shop.category','accessories')}}" class="cat-img position-relative overflow-hidden mb-3">
                         <img class="img-fluid" src="{{asset('modules/product/img/cat-4.jpg')}}" alt="">
                     </a>
                     <h5 class="font-weight-semi-bold m-0">Accerssories</h5>
@@ -81,7 +81,7 @@
             <div class="col-lg-4 col-md-6 pb-1">
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                    <a href="{{route('shop.category','bags')}}" class="cat-img position-relative overflow-hidden mb-3">
                         <img class="{{asset('modules/product/img/cat-5.jpg')}}" alt="">
                     </a>
                     <h5 class="font-weight-semi-bold m-0">Bags</h5>
@@ -90,7 +90,7 @@
             <div class="col-lg-4 col-md-6 pb-1">
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                    <a href="{{route('shop.category','shoes')}}" class="cat-img position-relative overflow-hidden mb-3">
                         <img class="img-fluid" src="{{asset('modules/product/img/cat-6.jpg')}}" alt="">
                     </a>
                     <h5 class="font-weight-semi-bold m-0">Shoes</h5>
@@ -135,12 +135,12 @@
             <h2 class="section-title px-5"><span class="px-2">Trandy Products</span></h2>
         </div>
         <div class="row px-xl-5 pb-3">
-            @foreach($products as $product)
+            @foreach($featuredProducts as $product)
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
 
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="{{asset('modules/product/img/product-1.jpg')}}" alt="">
+                        <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
                     </div>
                     
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
@@ -190,12 +190,12 @@
             <h2 class="section-title px-5"><span class="px-2">Trandy Products</span></h2>
         </div>
         <div class="row px-xl-5 pb-3">
-            @foreach($products as $product)
+            @foreach($latestProducts as $product)
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
 
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="{{asset('modules/product/img/product-3.jpg')}}" alt="">
+                        <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
                     </div>
                     
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">

@@ -43,6 +43,15 @@ class ProductResource extends Resource
 
             Forms\Components\Toggle::make('is_featured')->label('Featured')->default(false),
             Forms\Components\Toggle::make('status')->label('Active')->default(true),
+
+             // ✅ Corrected MultiSelect for attributes
+    Forms\Components\MultiSelect::make('attributeValues')
+        ->relationship('attributeValues', 'value') // ye Product model ke belongsToMany relation se link karega
+        ->label('Attributes')
+        ->placeholder('Select attribute values')
+        ->preload() // dropdown ko fast load karne ke liye
+        ->searchable(),
+
         ]);
     }
 

@@ -10,7 +10,8 @@ class HomeController extends Controller
     public function index()
     {
         // Trending / Featured products
-        $products = Product::all();
-        return view('product::home.index',compact('products'));
+        $featuredProducts = Product::where('is_featured',true)->get();
+        $latestProducts=Product::latest()->take(5)->get();
+        return view('product::home.index',compact('featuredProducts','latestProducts'));
     }
 }
