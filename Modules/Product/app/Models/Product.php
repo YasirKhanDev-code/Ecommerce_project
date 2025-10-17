@@ -40,5 +40,11 @@ public function inventories()
     return $this->hasMany(Inventory::class);
 }
 
+public function reviews()
+{
+    return $this->hasMany(Review::class);
+}
+
+
 
 }

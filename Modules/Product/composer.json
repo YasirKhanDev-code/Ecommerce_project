@@ -16,15 +16,16 @@
         }
     },
     "autoload": {
-        "psr-4": {
-            "Modules\\Product\\": "app/",
-            "Modules\\Product\\Database\\Factories\\": "database/factories/",
-            "Modules\\Product\\Database\\Seeders\\": "database/seeders/"
-        }
-    },
+    "psr-4": {
+        "App\\": "app/",
+        "Modules\\Product\\App\\Models\\": "Modules/Product/App/Models/"
+    }
+},
+
     "autoload-dev": {
         "psr-4": {
             "Modules\\Product\\Tests\\": "tests/"
+            
         }
     }
 }

@@ -36,7 +36,7 @@
                         @endif
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="{{ route('product.show', $product->slug ?? $product->id) }}" class="btn btn-sm text-dark p-0">
+                        <a href="{{ route('shop.show', $product->slug ?? $product->id) }}" class="btn btn-sm text-dark p-0">
                             <i class="fas fa-eye text-primary mr-1"></i>View Detail
                         </a>
                         <a href="#" class="btn btn-sm text-dark p-0">

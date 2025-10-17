@@ -11,4 +11,9 @@ Route::get('/shop',[ShopController::class,'index'])->name('shop');
 
 Route::get('/category/{slug}', [ShopController::class, 'categoryProducts'])->name('shop.category');
 
-   Route::get('/product/{slug}', [ProductController::class, 'show'])->name('product.show');
+
+Route::get('/shop/{slug}', [ShopController::class, 'show'])->name('shop.show');
+use App\Http\Controllers\ReviewController;
+
+Route::post('/product/{slug}/review', [ShopController::class, 'storeReview'])->name('product.review.store');
+Route::get('/product/{slug}', [ProductController::class, 'show'])->name('product.show');
