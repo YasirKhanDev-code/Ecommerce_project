@@ -46,5 +46,11 @@ public function reviews()
 }
 
 
+public function cartItems()
+{
+    return $this->hasMany(\Modules\Cart\Models\CartItem::class);
+}
+
+
 
 }
