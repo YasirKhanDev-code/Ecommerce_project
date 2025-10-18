@@ -1,4 +1,4 @@
-@extends('product::layouts.master')
+@extends('layouts.master')
 
 @section('content')
     <!-- Page Header Start -->

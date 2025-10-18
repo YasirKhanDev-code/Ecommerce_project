@@ -23,7 +23,7 @@
 <body>
 
     {{-- Header --}}
-    @include('product::partials.header')
+    @include('partials.header')
 
     {{-- Sidebar (if needed on all pages) --}}
 
@@ -34,7 +34,7 @@
     </main>
 
     {{-- Footer --}}
-    @include('product::partials.footer')
+    @include('partials.footer')
 
 <!-- Custom Script -->
 <script src="{{ asset('modules/product/assets/js/script.js') }}"></script>
