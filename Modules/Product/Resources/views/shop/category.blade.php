@@ -1,4 +1,4 @@
-@extends('product::layouts.master')
+@extends('layouts.master')
 @section('title', $category->name . ' - Eshopper')
 
 @section('content')
